@@ -1,0 +1,12 @@
+# cordis.patch.yml — {{PROJECT_NAME}} 的 DSH bundle 补丁（config 层注入）
+#
+# 让 `dsh plugin reconcile` 识别本插件为 profile layer，并把本文件内容
+# 插入 DSH 配置层。骨架阶段保持空列表；进入 SDD 后按 spec 追加条目。
+#
+# 格式以本机 deepseek-harness 仓库 dsh-plugins/PLUGIN-DEV-STANDARD.md §4 为准
+# （服务依赖声明 / 配置项 / 路由注册）；参考实现：dsh-scheduled-send 的
+# cordis.patch.yml。
+#
+# 示例（示意，按需填写，勿照抄）：
+#   - key: "<plugin-id>.enabled"
+#     value: true

@@ -1,0 +1,40 @@
+# ── 环境变量与凭证 ──
+.env
+.env.*
+!.env.example
+docs/.password
+
+# ── 构建产物 ──
+target/
+dist/
+build/
+*.class
+*.jar
+*.pyc
+__pycache__/
+.venv/
+venv/
+node_modules/
+target/
+*.egg-info/
+
+# ── 本地运行时数据 ──
+logs/
+data/
+*.log
+
+# ── IDE / 编辑器 ──
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# ── AI 平台本地状态 ──
+.dsh/
+
+# ── 生成的示例项目（若直接在本仓库跑 init-project） ──
+projects/
+
+# ── 框架拷贝转正后的归档内容（cleanup-framework.sh 产生，可恢复） ──
+_framework-archive/
