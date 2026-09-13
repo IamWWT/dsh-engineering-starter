@@ -44,4 +44,4 @@ owner: AI + 维护人
 ## 待办
 
 - 验收测试：新工程模式会话一句话「开发 dsh-minesweeper 扫雷插件」，跑通七阶段 + SDD，3084 验收。
-- 旧仓库 `IamWWT/project-framework-aistarter` 删除（等用户验收后执行，见 MEMORY.md 待办）。
+- ~~旧仓库 `IamWWT/project-framework-aistarter` 删除~~：✅ 2026-09-14 远端由用户删除（GitHub 404 验证），本地副本已删。
