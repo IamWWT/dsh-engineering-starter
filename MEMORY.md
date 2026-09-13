@@ -17,8 +17,9 @@
 
 | 项目 | 状态 |
 |------|------|
-| **v2.0 DSH 专属重构**（2026-09-13 起） | 🔄 进行中：preset/skills/scaffold(含 dsh-plugin kind)/scripts 已完成；README/MANUAL/MEMORY/FILE_INDEX 收尾中 → 推送新仓库 → install-dsh.sh → 用户验收 → 删旧仓库 |
-| 验收测试 | 待办：新工程模式会话开发 `dsh-minesweeper` 插件（规格见 `docs/00-request/minesweeper-request.md`），3084 临时实例验收后安装 |
+| **v2.0 DSH 专属重构**（2026-09-13 完成） | ✅ 完成：preset/skills/scaffold(双 kind)/scripts 全部落地，doc-check + quality-gate 全绿；`install-dsh.sh` 实跑成功（preset→`~/.dsh-dev/.agent-presets/engineering/`，旧版备份 `.bak-20260913-211243`；skills→`~/.agents/skills/`，新会话已识别 grill-me/grilling/project-discipline）；仓库已推送 `github.com/IamWWT/dsh-engineering-starter`（私有，Apache-2.0） |
+| 验收测试 | 待办：用户开新工程模式会话发"开发 dsh-minesweeper 扫雷插件"（规格见 `docs/00-request/minesweeper-request.md`），3084 临时实例验收 → 用户确认 → 3082 |
+| 复盘 | ✅ `docs/06-experience/2026-09-13-dsh-v2-rebuild.md`（踩坑 5 条 + 设计决策 + 验证清单） |
 | 血缘 | v1 = project-framework-aistarter（opscrew 实战提炼，Claude Code 兼容层）；v2.0 = DSH 专属重写，v1 仓库已弃用并将删除 |
 
 ### v2.0 变更清单（相对 v1）
@@ -34,11 +35,11 @@
 
 | # | 事项 | 优先级 |
 |---|------|:---:|
-| 1 | 推送新 GitHub 仓库 `IamWWT/dsh-engineering-starter`（新建私有仓，Apache-2.0） | P0 |
-| 2 | 运行 `scripts/install-dsh.sh`（preset→`~/.dsh-dev/.agent-presets/`，skills→`~/.agents/skills/`） | P0 |
-| 3 | 用户验收新仓库后删除旧仓库 `IamWWT/project-framework-aistarter`（不可逆，需用户最终口头确认） | P0 |
-| 4 | 验收测试：新工程模式会话开发 `dsh-minesweeper`（3084 临时实例 → 用户验收 → 3082） | P1 |
-| 5 | 复盘落 `docs/06-experience/`（v2.0 重构 + 扫雷验收结论） | P1 |
+| 1 | ~~推送新 GitHub 仓库 `IamWWT/dsh-engineering-starter`~~ | ✅ 2026-09-13 已推送（私有，Apache-2.0） |
+| 2 | ~~运行 `scripts/install-dsh.sh`~~ | ✅ 2026-09-13 已装（preset→`~/.dsh-dev/.agent-presets/engineering/`，skills→`~/.agents/skills/`，旧版有 `.bak` 备份） |
+| 3 | 用户验收新仓库后删除旧仓库 `IamWWT/project-framework-aistarter`（不可逆，需用户最终口头确认） | P0（等用户点头） |
+| 4 | 验收测试：新工程模式会话开发 `dsh-minesweeper`（触发语"开发 dsh-minesweeper 扫雷插件"，3084 临时实例 → 用户验收 → 3082） | P1 |
+| 5 | 复盘：v2.0 部分 ✅（`docs/06-experience/2026-09-13-dsh-v2-rebuild.md`）；扫雷验收结论待验收后补 | P1 |
 
 ## 3. 硬约束（违反即错）
 

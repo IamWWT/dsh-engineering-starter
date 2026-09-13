@@ -63,6 +63,7 @@ applies_to: 本框架仓库
 - docs/05-testing/README.md - 测试报告规范
 - docs/06-experience/README.md - 经验库规范
 - docs/06-experience/lessons-from-opscrew.md - opscrew 实战经验提炼（v1 血缘）
+- docs/06-experience/2026-09-13-dsh-v2-rebuild.md - v2.0 DSH 专属重构复盘（踩坑/设计决策/验证清单）
 - docs/07-ops/README.md - 运行手册规范
 
 ## standards/（生产级规范）
