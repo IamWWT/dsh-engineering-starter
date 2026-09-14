@@ -37,10 +37,10 @@ cd frameworks/dsh-engineering-starter
 scripts/install-dsh.sh
 ```
 
-- 默认把 preset 装到 `$DSH_HOME/.agent-presets/engineering/`（`$DSH_HOME` 缺省 `~/.dsh-dev`），
-  skills 装到 `~/.agents/skills`（你的实际 skill 根）。
+- 把 preset（含随包 skills/）装到 `$DSH_HOME/.agent-presets/engineering/`（`$DSH_HOME` 缺省 `~/.dsh-dev`）；
+  随包 skills 以 preset 层注册（scoped shadow），**不写 `~/.agents/skills`**，你的全局技能根原样保留。
 - 幂等；已存在的先备份为 `*.bak-<时间戳>`。`--uninstall` 卸载（同样保留备份）。
-- 覆盖选项：`--dsh-home <dir>`、`--skills-dir <dir>`。
+- 覆盖选项：`--dsh-home <dir>`。
 - **无需重启 DSH**：preset 在每次 roster 读取时重新发现，新开会话即生效；运行中的会话不受影响。
 
 ## 3. 第一次使用
@@ -110,7 +110,7 @@ scripts/experience.sh "主题" "场景" "问题" "根因" "解决"  # 经验条�
 | 想改什么 | 改哪里 | 生效方式 |
 |---|---|---|
 | preset persona / 工具集 | `presets/engineering/agent.cordis.yml` | 重跑 `scripts/install-dsh.sh`，新会话生效 |
-| skill 内容 | `skills/<name>/` | 重跑 `scripts/install-dsh.sh` |
+| skill 内容 | `presets/engineering/skills/<name>/` | 重跑 `scripts/install-dsh.sh`（随 preset 走，preset 层 shadow，不动 `~/.agents/skills`） |
 | 工程协议/铁律 | 本仓库 `AGENTS.md`（铁律只增不删） | 新 init 的项目自动带上；旧项目由该项目 Agent 同步 |
 | 规范（standards/） | `standards/` | 同上（生成项目持有副本） |
 
@@ -123,7 +123,7 @@ scripts/experience.sh "主题" "场景" "问题" "根因" "解决"  # 经验条�
 | 为什么 persona 只有 ~20 行？ | 铁律 4/16：规则单一真源在项目 AGENTS.md；persona 只做入口+兜底，system prompt 保持薄。 |
 | 为什么没有 CLAUDE.md？ | v2.0 是 DSH 专属版，协议入口统一为 AGENTS.md（DSH 原生读取）。 |
 | preset 装哪？ | `$DSH_HOME/.agent-presets/engineering/`（默认 `~/.dsh-dev`）。 |
-| skill 装哪？ | 默认 `~/.agents/skills`（你的实际生效根）；`--skills-dir` 可改。 |
+| skill 装哪？ | 随 preset 走：`presets/engineering/skills/` → 以 preset 层注册，工程模式内 shadow 全局同名技能；`~/.agents/skills`（全局根）原样保留。 |
 | 要重启 DSH 吗？ | 不需要；只影响新开的会话。 |
 | 项目 AGENTS.md 与 preset 冲突听谁的？ | 项目 AGENTS.md 优先。 |
 | 企业规范怎么进？ | 原始文档放 `standards/enterprise/_inbox/`，说"导入企业规范"（见 prompts/import-standards.md）。 |
@@ -136,7 +136,7 @@ AGENTS.md            # Agent 总协议（入口，薄）
 MANUAL.md            # 本手册（人）
 MEMORY.md            # 框架自身状态/待办/硬约束
 presets/engineering/ # 工程模式 preset（preset.yml + agent.cordis.yml）
-skills/              # grill-me / grilling / project-discipline
+presets/engineering/skills/  # grill-me / grilling / project-discipline（随 preset 走）
 AGENTS.md + standards/ + prompts/ + scaffold/ + scripts/   # 生成项目的协议/规范/模板/工具
 scaffold/kinds/      # 项目模板：dsh-plugin（generic 为默认）
 docs/                # 本框架自身文档（00-request … 07-ops + FILE_INDEX）

@@ -32,11 +32,11 @@
 | P1 设计与选型 | docs/02-design/architecture.md + decisions/（ADR） | 最小可行栈；显著决策有 ADR；模块只依赖契约 |
 | P2 任务计划 | docs/03-plan/tasks.md | 每任务有 DoD；每批可独立验证 |
 | P3 脚手架 | 骨架 + .env.example + 构建配置 | 空壳 build+test 在干净环境通过 |
-| P4 增量实现 | 每批：代码+测试+文档+经验 | 单测绿；FILE_INDEX/MEMORY/进度已更新 |
+| P4 增量实现 | 每批：代码+测试+文档+经验 | 单测绿；FILE_INDEX/MEMORY/进度已更新；中途需求已按变更协议登记 spec（原话+版本+验收标准） |
 | P5 测试加固 | docs/05-testing/ 带证据报告 | 安全/可靠性/性能/可观测清单逐项过完 |
 | P6 交付复盘 | README/运行手册/CHANGELOG/复盘/总结 | quality-gate 全绿；已知限制列明 |
 
-**Phase 0 细节**：一句话需求先用 **grill-me** skill 做 relentless 追问（目标/范围/边界/优先级/非目标），达成共识后再动笔；用户明确说"不用问直接做"时跳过，改走假设表。用户原话完整抄入 request.md。企业规范（`standards/enterprise/`）存在时列为 PRD 硬约束。
+**Phase 0 细节**：一句话需求先用 **grill-me** skill 做 relentless 追问（目标/范围/边界/优先级/非目标），达成共识后再动笔；用户明确说"不用问直接做"时跳过，改走假设表。用户原话完整抄入 request.md，并锁定**目标项目路径**（写入 request.md；跨项目联合开发时声明路径集合，目标外写入先经用户确认——防目标漂移）。企业规范（`standards/enterprise/`）存在时列为 PRD 硬约束。
 
 **与 DSH 机制的对应**：复杂改动先进 plan 模式（决策完备方案，批准后实施）；长任务/跨会话用 goal 跟踪并按 §4 留交接单；批量独立子任务用 subagent，大批量流程用 workflow（用户要求时）。每阶段产物必须落 `docs/`，禁止只留在对话里。
 

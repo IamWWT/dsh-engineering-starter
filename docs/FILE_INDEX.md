@@ -26,12 +26,12 @@ applies_to: 本框架仓库
 - presets/README.md - preset 说明（安装方式/薄 persona 设计原则）
 - presets/engineering/ - 工程模式 preset（preset.yml + agent.cordis.yml）
 
-## skills/（随包 skill）
+## presets/engineering/skills/（随包 skill，随 preset 走）
 
-- skills/README.md - skill 清单与安装说明
-- skills/grill-me/SKILL.md - 需求拷问（Phase 0 强制；薄包装→grilling）
-- skills/grilling/SKILL.md - 拷问方法论（MIT，源自 mattpocock/skills）
-- skills/project-discipline/SKILL.md - 框架操作手册（init/门禁/插件开发循环）
+- presets/engineering/skills/README.md - skill 清单与安装说明
+- presets/engineering/skills/grill-me/SKILL.md - 需求拷问（Phase 0 强制；薄包装→grilling）
+- presets/engineering/skills/grilling/SKILL.md - 拷问方法论（MIT，源自 mattpocock/skills）
+- presets/engineering/skills/project-discipline/SKILL.md - 框架操作手册（init/门禁/中途需求变更协议/视觉验收/插件开发循环）
 
 ## scaffold/（脚手架）
 

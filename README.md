@@ -21,7 +21,7 @@ Agent：（grill-me 拷问目标/范围/边界）→ 写 request.md（含假设�
 | 组成 | 位置 | 作用 |
 |---|---|---|
 | **工程模式 preset** | `presets/engineering/` | DSH agent 平面组合：薄 persona（入口+兜底纪律）+ 工具集 + plan/compaction 策略。装到 `$DSH_HOME/.agent-presets/engineering/` |
-| **skills** | `skills/` | `grill-me`（需求拷问，Phase 0 强制）、`grilling`（方法论，MIT，来自 mattpocock/skills）、`project-discipline`（框架操作手册：init/doc-check/门禁/插件开发循环） |
+| **skills** | `presets/engineering/skills/` | 随 preset 走、preset 层注册（shadow 全局同名技能，不动 `~/.agents/skills`）：`grill-me`（需求拷问，Phase 0 强制）、`grilling`（方法论，MIT，来自 mattpocock/skills）、`project-discipline`（框架操作手册） |
 | **工程协议** | `AGENTS.md`（根）+ `standards/` | 七阶段流程 + 17 条铁律 + 安全/可靠性/性能/可观测/测试/文档规范 + 语言适配。生成项目的单一真源 |
 | **指令模板** | `prompts/` | 一句话指令模板（自然语言，无控制词）：新项目/功能/Bug/评审/复盘/导入企业规范 |
 | **脚手架** | `scaffold/` + `scripts/init-project.sh` | 两种 kind：`generic`（任意语言应用）/ `dsh-plugin`（DSH 插件：双 tsconfig、esbuild 双端构建+产物门禁、SDD 规格骨架、冒烟测试） |
@@ -30,7 +30,7 @@ Agent：（grill-me 拷问目标/范围/边界）→ 写 request.md（含假设�
 ## 快速开始（3 步）
 
 ```bash
-# 1. 安装 preset + skills（幂等；默认 $DSH_HOME=~/.dsh-dev，skills 装到 ~/.agents/skills）
+# 1. 安装 preset（含随包 skills/，幂等；默认 $DSH_HOME=~/.dsh-dev；不写 ~/.agents/skills）
 scripts/install-dsh.sh
 
 # 2. 在 DSH 里开一个新会话，选「工程模式」，workspace 指向要开发的项目
@@ -87,4 +87,4 @@ docs/ 骨架；DSH 插件 kind 额外带 package.json（dsh 字段）、双 tsco
 ## License
 
 Apache-2.0（见 [LICENSE](LICENSE)）。
-`skills/grilling` 源自 [mattpocock/skills](https://github.com/mattpocock/skills)（MIT）。
+`presets/engineering/skills/grilling` 源自 [mattpocock/skills](https://github.com/mattpocock/skills)（MIT）。

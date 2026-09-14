@@ -45,7 +45,7 @@
 
 ### Phase 0 细节
 
-1. **需求澄清用 grill-me skill**：一句话需求先调用 `grill-me` 做 relentless 追问（目标/范围/边界/优先级/非目标），达成共识后再动笔；用户明确说"不用问直接做"时跳过，改走假设表。
+1. **需求澄清用 grill-me skill**：一句话需求先调用 `grill-me` 做 relentless 追问（目标/范围/边界/优先级/非目标），达成共识后再动笔；用户明确说"不用问直接做"时跳过，改走假设表。**同时锁定目标项目路径**（写入 request.md，跨项目联合开发声明路径集合；目标外写入先经用户确认——防目标漂移，细节见 project-discipline §0）。
 2. 用户原话完整抄入 `request.md`，提炼目标/约束，写**假设表**（假设+依据+影响）。
 3. 新项目：`scripts/init-project.sh <目录> --lang … --kind generic|dsh-plugin` 生成骨架（DSH 插件项目用 `--kind dsh-plugin`）。
 4. 企业规范：`standards/enterprise/_inbox/` 有文件则按 `standards/enterprise/README.md` 转化，列为 PRD 非功能约束。
@@ -130,7 +130,7 @@ README.md        # 给人看的总览
 MANUAL.md        # 使用手册（人）
 MEMORY.md        # 框架自身状态/待办/硬约束
 presets/         # DSH agent preset（工程模式）→ install-dsh.sh 装到 $DSH_HOME/.agent-presets/
-skills/          # 随包 skill：project-discipline（框架操作手册）+ grilling/grill-me（需求澄清）
+presets/engineering/skills/  # 随包 skill（随 preset 走，preset 层注册 shadow 全局）：project-discipline + grilling/grill-me
 standards/       # 生产级规范（语言无关 + languages/ + enterprise/）
 prompts/         # 一句话指令模板（自然语言，给人在 DSH 里发）
 scaffold/        # 新项目模板（generic + dsh-plugin 两种 kind）

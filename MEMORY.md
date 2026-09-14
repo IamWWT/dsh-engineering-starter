@@ -17,7 +17,7 @@
 
 | 项目 | 状态 |
 |------|------|
-| **v2.0 DSH 专属重构**（2026-09-13 完成） | ✅ 完成：preset/skills/scaffold(双 kind)/scripts 全部落地，doc-check + quality-gate 全绿；`install-dsh.sh` 实跑成功（preset→`~/.dsh-dev/.agent-presets/engineering/`，旧版备份 `.bak-20260913-211243`；skills→`~/.agents/skills/`，新会话已识别 grill-me/grilling/project-discipline）；仓库已推送 `github.com/IamWWT/dsh-engineering-starter`（私有，Apache-2.0） |
+| **v2.1 改造**（2026-09-14 完成） | ✅ skills 随 preset 走（preset 层 shadow，`~/.agents/skills` 已恢复原版 grill-me/grilling）；中途需求变更协议（§6）+ 视觉验收规则（§7）+ **目标锚定防漂移（§0：目标项目路径白名单 + 压缩后重申）**；persona/P4/多语言说明同步；dsh-plugin 脚手架 FILE_INDEX 实测通过。扫雷会话偏离复盘见 `docs/06-experience/`（待补）。仓库已推送 |
 | 验收测试 | 待办：用户开新工程模式会话发"开发 dsh-minesweeper 扫雷插件"（规格见 `docs/00-request/minesweeper-request.md`），3084 临时实例验收 → 用户确认 → 3082 |
 | 复盘 | ✅ `docs/06-experience/2026-09-13-dsh-v2-rebuild.md`（踩坑 5 条 + 设计决策 + 验证清单） |
 | 血缘 | v1 = project-framework-aistarter（opscrew 实战提炼，Claude Code 兼容层）；v2.0 = DSH 专属重写，v1 仓库已删除（远端 2026-09-14 用户删除，本地同日删除） |
