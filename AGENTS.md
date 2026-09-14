@@ -86,7 +86,7 @@
 | 状态/待办变化 | `MEMORY.md` |
 | 一般性教训 | `docs/06-experience/` + 必要时提升为 §4 铁律 |
 
-**会话交接（新会话启动协议）**：按 §0 读取（SESSION.md 优先于 request.md）→ 先向用户汇报"上次进度/下一步/待确认" → 确认后再动手。结束前用 `scripts/handoff.sh` 更新 SESSION.md + 当日进度（`scripts/journal.sh`）+ `MEMORY.md`。
+**会话交接（新会话启动协议）**：按 §0 读取（SESSION.md 优先于 request.md）→ 先向用户汇报"上次进度/下一步/待确认" → 确认后再动手。进度真源不限于 SESSION.md：任何项目的进度文件（PROGRESS.md/tasks.md 等）都按「🔄 进行中 / ⏭ 下一步+待确认」三小节约定续接，缺失即补（见 project-discipline §8）。结束前用 `scripts/handoff.sh` 更新 SESSION.md + 当日进度（`scripts/journal.sh`）+ `MEMORY.md`。
 
 ---
 
